@@ -523,9 +523,118 @@ CALCULATE(
 
 ---
 
+# DAX Date & Time Functions
 
+## TODAY
 
+Returns the current date (without time).
 
+```DAX
+Today Date =
+TODAY()
+```
+
+**Use Case:** Display today's date in reports or calculations.
+
+---
+
+## NOW
+
+Returns the current date and time.
+
+```DAX
+Current DateTime =
+NOW()
+```
+
+**Use Case:** Capture exact timestamp of refresh or calculation.
+
+---
+
+## DATE
+
+Creates a date from year, month, and day values.
+
+```DAX
+Start Date =
+DATE(2026, 6, 22)
+```
+
+**Use Case:** Build custom dates for analysis or filtering.
+
+---
+
+## DATEDIFF
+
+Returns the difference between two dates in a specified interval.
+
+```DAX
+Days Difference =
+DATEDIFF(
+    'Kenya_Crops_Dataset 5'[Planting Date],
+    'Kenya_Crops_Dataset 5'[Harvest Date],
+    DAY
+)
+```
+
+**Use Case:** Calculate crop growth duration in days.
+
+---
+
+## YEAR
+
+Extracts the year from a date.
+
+```DAX
+Planting Year =
+YEAR('Kenya_Crops_Dataset 5'[Planting Date])
+```
+
+**Use Case:** Group production data by year.
+
+---
+
+## MONTH
+
+Extracts the month number from a date.
+
+```DAX
+Planting Month =
+MONTH('Kenya_Crops_Dataset 5'[Planting Date])
+```
+
+**Use Case:** Analyze seasonal trends in crop planting.
+
+---
+
+## DAY
+
+Extracts the day of the month from a date.
+
+```DAX
+Planting Day =
+DAY('Kenya_Crops_Dataset 5'[Planting Date])
+```
+
+**Use Case:** Break down planting activity by day.
+
+---
+
+## FORMAT
+
+Converts a value to text using a specified format.
+
+```DAX
+Formatted Date =
+FORMAT(
+    'Kenya_Crops_Dataset 5'[Planting Date],
+    "DD-MM-YYYY"
+)
+```
+
+**Use Case:** Display dates in a readable format for reports.
+
+---
 
 
 

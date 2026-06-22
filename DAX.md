@@ -142,16 +142,162 @@ ABS(
 
 ---
 
+## TEXT FUNCTIONS
 
 
-TEXT FUNCTIONS
+## CONCATENATE
 
-CONCATENATE
-LEFT
-RIGHT
-MID
-LEN
-UPPER
+Combines two text values into a single string.
+
+```DAX
+Farmer_County =
+CONCATENATE(
+    'Kenya_Crops_Dataset 5'[Farmer Name],
+    'Kenya_Crops_Dataset 5'[County]
+)
+```
+
+**Use Case:** Create a combined identifier using the farmer's name and county.
+
+**Example Output:**
+
+| Farmer Name | County | Result |
+|------------|---------|---------|
+| John Mwangi | Meru | John MwangiMeru |
+
+---
+
+## RIGHT
+
+Returns a specified number of characters from the end of a text string.
+
+```DAX
+Farmer_Id =
+RIGHT(
+    'Kenya_Crops_Dataset 5'[Farmer Contact],
+    3
+)
+```
+
+**Use Case:** Extract the last three digits of a farmer's contact number as an identifier.
+
+**Example Output:**
+
+| Farmer Contact | Result |
+|---------------|---------|
+| 0712345678 | 678 |
+
+---
+
+## LEFT
+
+Returns a specified number of characters from the beginning of a text string.
+
+```DAX
+County_Code =
+LEFT(
+    'Kenya_Crops_Dataset 5'[Farmer Contact],
+    2
+)
+```
+
+**Use Case:** Extract the first two digits of a contact number.
+
+**Example Output:**
+
+| Farmer Contact | Result |
+|---------------|---------|
+| 0712345678 | 07 |
+
+---
+
+## MID
+
+Returns a specific number of characters from the middle of a text string.
+
+```DAX
+Contact_Extract =
+MID(
+    'Kenya_Crops_Dataset 5'[Farmer Contact],
+    2,
+    4
+)
+```
+
+**Use Case:** Extract a specific section of the farmer's contact number.
+
+**Example Output:**
+
+| Farmer Contact | Result |
+|---------------|---------|
+| 0712345678 | 7123 |
+
+---
+
+## LEN
+
+Returns the number of characters in a text string.
+
+```DAX
+Farmer_Name_Length =
+LEN(
+    'Kenya_Crops_Dataset 5'[Farmer Name]
+)
+```
+
+**Use Case:** Determine the length of each farmer's name.
+
+**Example Output:**
+
+| Farmer Name | Result |
+|------------|---------|
+| John Mwangi | 11 |
+
+---
+
+## UPPER
+
+Converts all characters in a text string to uppercase.
+
+```DAX
+Farmer_Name_Uppercase =
+UPPER(
+    'Kenya_Crops_Dataset 5'[Farmer Name]
+)
+```
+
+**Use Case:** Standardize farmer names for reporting and analysis.
+
+**Example Output:**
+
+| Farmer Name | Result |
+|------------|---------|
+| John Mwangi | JOHN MWANGI |
+
+---
+
+## LOWER
+
+Converts all characters in a text string to lowercase.
+
+```DAX
+Farmer_Name_Lowercase =
+LOWER(
+    'Kenya_Crops_Dataset 5'[Farmer Name]
+)
+```
+
+**Use Case:** Standardize text values for comparisons and data cleaning.
+
+**Example Output:**
+
+| Farmer Name | Result |
+|------------|---------|
+| John Mwangi | john mwangi |
+
+---
+
+
 
 LOGICAL FUNCTIONS
 IF
